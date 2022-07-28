@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <header>
+        <div id="menu-logo">
+            <div class="img-logotipo">
+                <img src="assets/logotipo/logo.png" alt="logo" srcset="">
+            </div>
+            <div>xNatzhu</div>
+        </div>
+        <nav id="menu-item">
+            <li id="menu-item-block-title">
+                <p class="title-menu">Navegations</p>
+            </li>
+            <li>
+                <a class="menu-item-block" href="#">
+                    <span class="material-symbols-outlined">
+                        dashboard
+                        </span>
+                    <p>Dashboard</p>   
+                </a>
+            </li>
+            <li>
+                <a class="menu-item-block" href="#">
+                    <span class="material-symbols-outlined">
+                        dvr
+                        </span>
+                    <p>404 Page </p>   
+                </a>
+            </li>
+
+            <li>
+                <a class="menu-item-block" href="#">
+                    <span class="material-symbols-outlined">
+                        wysiwyg
+                        </span>
+                    <p>Documentation</p>   
+                </a>
+            </li>
+
+            <li>
+                <a class="menu-item-block" href="#">
+                    <span class="material-symbols-outlined">
+                        data_array
+                        </span>
+                    <p>Download code</p>   
+                </a>
+            </li>
+
+            <li id="menu-item-block-title">
+                <p class="title-menu">Proyects</p>
+            </li>
+            <li>
+                <a class="menu-item-block" href="#">
+                    <span class="material-symbols-outlined">
+                        web
+                        </span>
+                    <p>Simple page</p>   
+                </a>
+            </li>
+            <li>
+                <a class="menu-item-block" href="#">
+                    <span class="material-symbols-outlined">
+                        settings_system_daydream
+                        </span>
+                    <p>Climate system</p>   
+                </a>
+            </li>
+
+            <li id="menu-item-block-title">
+                <p class="title-menu">Contact</p>
+            </li>
+            <li>
+                <a class="menu-item-block" href="#">
+                    <span class="material-symbols-outlined">
+                        import_contacts
+                        </span>
+                    <p>Linkedin</p>   
+                </a>
+            </li>
+            <li>
+                <a class="menu-item-block" href="#">
+                    <span class="material-symbols-outlined">
+                        contact_mail
+                        </span>
+                    <p>e-mail</p>   
+                </a>
+            </li>
+            <li>
+                <a class="menu-item-block" href="#">
+                    <span class="material-symbols-outlined">
+                        contact_page
+                        </span>
+                    <p>GitHub</p>   
+                </a>
+            </li>
+
+        </nav>
+
+    </header>
+
+    <main>
+        <section id="section-one">
+            <!---Menu-search-->
+
+            <form id="searchForm" class="section-one-form">
+                <label>
+                    <input type="text" id="formCity" class="zero-section-input-text" name="nameData" placeholder="Search..." required>
+                </label>
+                <button id="eventoclick" type="submit" class="section-one-submit"><span class="material-symbols-outlined">
+                    search
+                    </span>
+                </button>
+            </form>
+
+            <div class="section-one-dark-mode">
+                <span class="material-symbols-outlined">
+                    dark_mode
+                    </span>
+            </div>
+
+        </section>
+
+        <section id="section-two">
+            <!---weather main-->
+            <article id="section-two-column-one">
+
+                <!--information of the city and day-->
+                <article id="section-two-column-one-date-and-main-city">
+                    <div>
+                        <p id="start-date"><span id="fecha">Julio 14</span> - Weather report</p>
+                    </div>
+
+                    <div>
+                        <p id="County-in">Country in:
+                            <span id="ciudad"></span>
+                        </p>
+                    </div>
+                </article>
+
+                <!---current weather information-->
+
+                <article id="current-weather">
+
+                    <article id="main-temperature">
+                        <div class="current-temperature-icon">
+                            <img id="iconoClima" src="assets/animated/01d.svg" alt="icon-weather" srcset="">
+                        </div>
+                        <article class="current-temperature-data">
+                            <div><h5 id="section_one_column_grado">40°</h5></div>
+                        </article>
+                    </article>
+
+                    <article id="componentes-weather">
+                        <article id="componentes-weather-column-one">
+                            <article id="componentes-weather-block">
+                                <!---BLOQUE UNO DE ELEMENTOS -->
+                                <div class="componentes-weather-block-icon">
+                                    <img src="assets/icoclimas/humedad.png" alt="" srcset="">
+                                </div>
+                               <article>
+                                <p class="componentes-weather-block-number" id="humedad">60%</p>
+                                <p class="componentes-weather-block-element">Humedity</p>
+                               </article>
+
+                               <article id="componentes-weather-block">
+                                <div class="componentes-weather-block-icon">
+                                    <img src="assets/icoclimas/viento.png" alt="" srcset="">
+                                </div>
+                               </article>
+                               <article>
+                                <p id="vientoSpeed" class="componentes-weather-block-number"> 5.6 km/h</p>
+                                <p class="componentes-weather-block-element">Wind</p>
+                               </article>
+
+                               <article id="componentes-weather-block">
+                                <div class="componentes-weather-block-icon">
+                                    <img src="assets/icoclimas/measure.png" alt="" srcset="">
+                                </div>
+                               </article>
+                               <article>
+                                <p id="presionAtmosferica" class="componentes-weather-block-number">1.000 hm</p>
+                                <p class="componentes-weather-block-element">Presure</p>
+                               </article>
+                            </article>
+
+                            <article id="componentes-weather-block">
+                                <!---BLOQUE UNO DE ELEMENTOS -->
+                                <div class="componentes-weather-block-icon">
+                                    <img src="assets/icoclimas/baja-temperatura.png" alt="" srcset="">
+                                </div>
+                               <article>
+                                <p id="temperaturaMin" class="componentes-weather-block-number">2°</p>
+                                <p class="componentes-weather-block-element">Temp. Min</p>
+                               </article>
+
+                               <article id="componentes-weather-block">
+                                <div class="componentes-weather-block-icon">
+                                    <img src="assets/icoclimas/alta-temperatura.png" alt="" srcset="">
+                                </div>
+                               </article>
+                               <article>
+                                <p id="temperaturaMax" class="componentes-weather-block-number"> 38°</p>
+                                <p class="componentes-weather-block-element">Temp. Max</p>
+                               </article>
+
+                               <article id="componentes-weather-block">
+                                <div class="componentes-weather-block-icon">
+                                    <img src="assets/icoclimas/eye-care.png" alt="" srcset="">
+                                </div>
+                               </article>
+                               <article>
+                                <p class="componentes-weather-block-number">1.000</p>
+                                <p class="componentes-weather-block-element">Visibility</p>
+                               </article>
+                            </article>
+                        </article>
+                    </article>
+                </article>
+            </article>
+            <!---Maps-->
+
+            <article id="componentes-weather-mobile">
+                    <article id="componentes-weather-column-one">
+                        <article id="componentes-weather-block">
+                            <div class="componentes-weather-block-icon">
+                                <img src="assets/icoclimas/humedad.png" alt="" srcset="">
+                            </div>
+                           <article>
+                            <p class="componentes-weather-block-number" id="humedad">0%</p>
+                            <p class="componentes-weather-block-element">Humedity</p>
+                           </article>
+                        </article>
+                        <article id="componentes-weather-block">
+                           <article id="componentes-weather-block">
+                            <div class="componentes-weather-block-icon">
+                                <img src="assets/icoclimas/viento.png" alt="" srcset="">
+                            </div>
+                           </article>
+                           <article>
+                            <p id="vientoSpeed" class="componentes-weather-block-number"> 5.6 km/h</p>
+                            <p class="componentes-weather-block-element">Wind</p>
+                           </article>
+                        </article>
+                    </article>
+
+                    <article id="componentes-weather-column-one">
+                        <article id="componentes-weather-block">
+                            <div class="componentes-weather-block-icon">
+                                <img src="assets/icoclimas/baja-temperatura.png" alt="" srcset="">
+                            </div>
+                           <article>
+                            <p id="temperaturaMin" class="componentes-weather-block-number">2°</p>
+                            <p class="componentes-weather-block-element">Temp. Min</p>
+                           </article>
+
+                        </article>
+
+                        
+                        <article id="componentes-weather-block">
+                           <article id="componentes-weather-block">
+                            <div class="componentes-weather-block-icon">
+                                <img src="assets/icoclimas/alta-temperatura.png" alt="" srcset="">
+                            </div>
+                           </article>
+                           <article>
+                            <p id="temperaturaMax" class="componentes-weather-block-number" > 38°</p>
+                            <p class="componentes-weather-block-element">Temp. Max</p>
+                           </article>
+                        </article>
+                    </article>
+
+                    
+                    <article id="componentes-weather-column-one">
+                        <article id="componentes-weather-block">
+                            <div class="componentes-weather-block-icon">
+                                <img src="assets/icoclimas/eye-care.png" alt="" srcset="">
+                            </div>
+                           <article>
+                            <p class="componentes-weather-block-number">1.000</p>
+                            <p class="componentes-weather-block-element">Visibility</p>
+                           </article>
+
+                        </article>
+
+                        
+                        <article id="componentes-weather-block">
+                           <article id="componentes-weather-block">
+                            <div class="componentes-weather-block-icon">
+                                <img src="assets/icoclimas/measure.png" alt="" srcset="">
+                            </div>
+                           <article>
+                            <p id="presionAtmosferica" class="componentes-weather-block-number">1.000 hm</p>
+                            <p class="componentes-weather-block-element">Presure</p>
+                           </article>
+                        </article>
+                    </article>
+
+            </article>
+            <article id="section-two-column-two">
+                <iframe></iframe>
+            </article>
+        </section>
+
+        <section id="section-three">
+            <!---block-welcome-->
+            <article id="section-three-column-one">
+                <h2>Welcome to the city Andorra</h2>
+                <p>
+                    The weather is partially clear, a nice day to go for a walk and enjoy the heat. There are no clouds, so the probability of rain is very low.
+                </p>
+            </article>
+
+            <!--block-location-->
+            <article id="section-three-column-two">
+             
+                <article class="section-three-row-locations">
+                    <article>
+                        <p class="componentes-weather-block-number">Locations</p>
+                    </article>
+                    <div><img src="assets/icoclimas/placeholder.png" alt="" sizes="" srcset=""></div>
+                </article>
+
+                <article class="section-three-row-locations-components">
+                    <article>
+                        <p class="componentes-weather-block-number">Length</p>
+                    </article>
+                    <article>
+                        <p class="section-three-row-locations-number">12000</p>
+                    </article>
+                </article>
+
+                <article class="section-three-row-locations-components">
+                    <article>
+                        <p class="componentes-weather-block-number">Latitude</p>
+                    </article>
+                    <article>
+                        <p class="section-three-row-locations-number">30000</p>
+                    </article>
+                </article>
+            </article>
+        </section>
+
+        <section id="section-four">
+
+            <article id="section-four-column-one">
+                <article id="section-four-column-one-title-config">
+                    <div>
+                        <img src="assets/icoclimas/cloudy-day.png" alt="" srcset="">
+                    </div>
+                    <p id="section-four-column-one-title">3 Days Forecast </p>
+                </article>
+
+                <article id="section-four-main-weather">
+
+                    <article class="section-four-weather-extended">
+    
+                        <article class="section-four-weather-extended-icon-days">
+                            <div class="section-four-weather-extended-icon" >
+                                <img src="assets/animated/02d.svg" alt="" srcset="">
+                            </div>
+                            <article>
+                                <p class="section-four-weather-extended-days">Monday</p>
+                                <p class="section-four-weather-extended-cloud">Rain</p>
+                            </article>
+                        </article>
+                        <article class="section-four-weather-extended-temp-global">
+                            <p class="section-four-weather-extended-temp">32°/30°</p>
+                        </article>
+        
+                    </article>
+                                    
+                    <article class="section-four-weather-extended">
+    
+                        <article class="section-four-weather-extended-icon-days">
+                            <div class="section-four-weather-extended-icon" >
+                                <img src="assets/animated/04d.svg" alt="" srcset="">
+                            </div>
+                            <article>
+                                <p class="section-four-weather-extended-days">Tuesday</p>
+                                <p class="section-four-weather-extended-cloud">Rain</p>
+                            </article>
+                        </article>
+                        <article class="section-four-weather-extended-temp-global">
+                            <p class="section-four-weather-extended-temp">2°/10°</p>
+                        </article>
+        
+                    </article>
+    
+                    <article class="section-four-weather-extended">
+    
+                        <article class="section-four-weather-extended-icon-days">
+                            <div class="section-four-weather-extended-icon" >
+                                <img src="assets/animated/03n.svg" alt="" srcset="">
+                            </div>
+                            <article>
+                                <p class="section-four-weather-extended-days">Wednesday</p>
+                                <p class="section-four-weather-extended-cloud">Rain</p>
+                            </article>
+                        </article>
+                        <article class="section-four-weather-extended-temp-global">
+                            <p class="section-four-weather-extended-temp">22°/28°</p>
+                        </article>
+        
+                    </article>  
+                </article>
+
+            </article>
+
+            <article id="section-four-city-recommendation">
+                <article class="section-three-row-locations">
+                    <article>
+                        <p class="componentes-weather-block-number">Random City Weather</p>
+                    </article>
+                    <div><img src="assets/icoclimas/location.png" alt="" sizes="" srcset=""></div>
+                </article>
+
+                <article id="section-four-city-recommendation-items-general">
+                    <article id="section-four-city-items-icons-temp-city">
+                        <div class="section-four-city-items-icon"><img src="assets/animated/09n.svg" alt="" srcset=""></div>
+                        <article class="section-four-city-items-temp-city">
+                            <article>
+                                <h5>20°</h5>
+                            </article>
+                            <article class="section-four-city-items-city">
+                                <h6>New York</h6>
+                                <p>State United</p>
+                            </article>
+                        </article>
+                    </article>
+                    <article id="section-four-city-items-component">
+                        <p>Humedity 90%</p>
+                        <p>Precise 1000</p>
+                        <p>wind 2.3 k/m</p>
+
+                    </article>
+                </article>
+            </article>
+        </section>
+    </main>
+
+    <script src="js/clima.js"></script>
+</body>
+</html>
