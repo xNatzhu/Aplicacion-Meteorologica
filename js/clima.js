@@ -1,14 +1,15 @@
 
 window.addEventListener("load", () => {
     //Variables
-    let temperaturaGrado = document.querySelectorAll("#section_one_column_grado");
-    let ciudad = document.querySelectorAll("#ciudad");
-    let fecha = document.querySelectorAll("#fecha");
-    let humedad = document.querySelectorAll("#humedad");
-    let presionAtmosferica = document.querySelectorAll("#presionAtmosferica");
-    let vientoSpeed = document.querySelectorAll("#vientoSpeed");
-    let temperaturaMax = document.querySelectorAll("#temperaturaMax");
-    let temperaturaMin = document.querySelectorAll("#temperaturaMin");
+    let temperaturaGrado = document.getElementById("section_one_column_grado");
+    let ciudad = document.getElementById("ciudad");
+    let map = document.getElementById("map");
+    let fecha = document.getElementById("fecha");
+    let humedad = document.getElementById("humedad");
+    let presionAtmosferica = document.getElementById(`presionAtmosferica`);
+    let vientoSpeed = document.getElementById("vientoSpeed");
+    let temperaturaMax = document.getElementById("temperaturaMax");
+    let temperaturaMin = document.getElementById("temperaturaMin");
     let cityForm 
     let searchForm = document.getElementById("searchForm");
 
@@ -39,9 +40,14 @@ window.addEventListener("load", () => {
         console.log(data);
         let temperaturaGradoValor = Math.round(data.list[0].main.temp);
         temperaturaGrado.innerHTML = `${temperaturaGradoValor}°`
-
         ciudad.innerText = data.city.name
-
+        let mapLon = data.city.coord.lon
+        let mapLat = data.city.coord.lat
+        let selector = document.getElementById('section-two-column-two');
+        let iframe = document.createElement('iframe');
+        //propiedades iframe
+        iframe.setAttribute('src',`https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13618.049739807708!2d${mapLon}!3d${mapLat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sar!4v1662869534399!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade`);
+        selector.appendChild(iframe);
         let {humidity, pressure} = data.list[0].main
         humedad.innerHTML = `${humidity}%`
         presionAtmosferica.innerHTML = `${pressure} hPa`
@@ -66,9 +72,8 @@ window.addEventListener("load", () => {
             document.getElementById("iconoClima0"+countIndex).src = `assets/animated/${ExtendedWeatherIco}.svg`;
             
         }
-
-
     }
+
 
     
 
@@ -77,10 +82,14 @@ window.addEventListener("load", () => {
         const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=6752644c4b10d307e40b484055d4f5a5&units=metric`
         fetch(url)
             .then(response => {return response.json()})
-            .then(data => {clima(data)})
+            .then(data => {
+                clima(data)
+            })
             .catch(error => {
                 console.log(error)
             })
+
+        console.log(url);
     }
 
     async function getLocationDefault() {
@@ -110,6 +119,10 @@ window.addEventListener("load", () => {
     
         //CONFIGURACION FORM
         params.preventDefault()
+        let element  = document.getElementById("section-two-column-two");
+            while (element.firstChild) {
+                element.removeChild(element.firstChild);
+            }
         let contentCity = params.target.nameData.value
         let expReg= new RegExp("[,.;+-1234567890*]","g");
         cityForm = contentCity.replace(expReg, "");
@@ -142,6 +155,10 @@ window.addEventListener("load", () => {
     
     searchForm.addEventListener("submit", searchFunction)
     
+    const newElement = document.createElement("div");
+    newElement.classList.add("div");
+    newElement.textContent = "soy un div creado con javascript";
+    document.querySelector(".container").appendChild(newElement);
 
 
 })
