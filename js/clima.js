@@ -10,6 +10,8 @@ window.addEventListener("load", () => {
     let vientoSpeed = document.getElementById("vientoSpeed");
     let temperaturaMax = document.getElementById("temperaturaMax");
     let temperaturaMin = document.getElementById("temperaturaMin");
+    let getMapLat = document.getElementById("mapLat");
+    let getMapLon = document.getElementById("mapLon");
     let cityForm 
     let searchForm = document.getElementById("searchForm");
 
@@ -43,6 +45,9 @@ window.addEventListener("load", () => {
         ciudad.innerText = data.city.name
         let mapLon = data.city.coord.lon
         let mapLat = data.city.coord.lat
+        getMapLat.innerHTML = mapLat;
+        getMapLon.innerHTML = mapLon;
+
         let selector = document.getElementById('section-two-column-two');
         let iframe = document.createElement('iframe');
         //propiedades iframe
@@ -61,7 +66,6 @@ window.addEventListener("load", () => {
         iconoClima.src = `assets/animated/${icon}.svg`;
 
         console.log(iconoClima);
-
         let countIndex = 0
         //Bucle extended weather
         for (let index = 1; index < 6; index++) {
@@ -154,11 +158,5 @@ window.addEventListener("load", () => {
     //Event
     
     searchForm.addEventListener("submit", searchFunction)
-    
-    const newElement = document.createElement("div");
-    newElement.classList.add("div");
-    newElement.textContent = "soy un div creado con javascript";
-    document.querySelector(".container").appendChild(newElement);
-
 
 })
