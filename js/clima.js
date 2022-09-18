@@ -20,9 +20,24 @@ window.addEventListener("load", () => {
     //Funcion - fecha
     function fechaContent() {
         setInterval(() => {
-            //Variable fecha
-            let fecha1 = new Date;
-            fecha.innerText = fecha1.toLocaleString()
+        //Variables dias
+        let weekDays  = ["Sunday","Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        //Variable fecha
+        let dateClassCreation = new Date();
+        let executionOfDays = dateClassCreation.getDay()
+        fecha.innerHTML = weekDays[executionOfDays];
+
+        //Variable de contador
+        let countDays = 0
+
+        for (let index = 0; index < 3; index++) {
+            countDays +=1
+            let forecastDay = document.getElementById('forecastDay0'+countDays);
+            var daysFilter= ((executionOfDays+=1) > 6) ? weekDays[executionOfDays = 0] : weekDays[executionOfDays];
+            forecastDay.innerHTML = daysFilter
+
+        }
+            
         }, 1000);
     }
 
@@ -74,6 +89,8 @@ window.addEventListener("load", () => {
             tempExtendedWeather.innerHTML = Math.round(data.list[countIndex].main.temp)+"°"
             const ExtendedWeatherIco = data.list[countIndex].weather[0].icon
             document.getElementById("iconoClima0"+countIndex).src = `assets/animated/${ExtendedWeatherIco}.svg`;
+            let forecastDescriptionExtended= document.getElementById('forecastDescriptionExtended0'+countIndex);
+            forecastDescriptionExtended.innerText = data.list[countIndex].weather[0].main
             
         }
     }

@@ -14,31 +14,16 @@
 :root {
 
     /*Variables color*/
-
-     --main-color: #ffffff; /*dark: #252837 - light: #ffffff*/
-
-    --main-bg-body-color:#f3f7fa; /*light: f3f7fa -  1d1f2b */
-
-    --color-secondary:#4f46bb; /*light: 7f63f4 - dark 5e6b9c */
-
-    --color-tertiary:#aaaaaa; /* light:  aaaaaa  - dark: e2e2e2*/
-
-    --color-four: #cecece; /*dark: 524e4e - light: cecece */
-
+     --main-color: #252837; /*dark: #252837 - light: #ffffff*/
+    --main-bg-body-color:#1d1f2b; /*light: f3f7fa -  1d1f2b */
+    --color-secondary:#5e6b9c; /*light: 7f63f4 - dark 5e6b9c */
+    --color-tertiary:#e2e2e2; /* light:  aaaaaa  - dark: e2e2e2*/
+    --color-four: #524e4e; /*dark: 524e4e - light: cecece */
     --color-menu-item:#a5a5a5; 
-
-    --color-bg-menu-desk-active: #f3f7fa; /*dark:1d1f2b - light dfdfdf*/
-
-    --color-fifth:#858585; /* dark: e4dede -  light: 858585 */
-
-    --color-sixth-temp:#696971; /* dark: ffffff - light 696971*/
-
+    --color-bg-menu-desk-active: #1d1f2b; /*dark:1d1f2b - light dfdfdf*/
+    --color-fifth:#e4dede; /* dark: e4dede -  light: 858585 */
+    --color-sixth-temp:#ffffff; /* dark: ffffff - light 696971*/
     --color-logo-name: #ffffff;
-
-
-
-
-    
   }
 
 
@@ -431,7 +416,6 @@ header{
     margin-bottom: 30px;
     padding-top: 10px;
     padding-bottom: 10px;
-
     padding-left: 15px;
     padding-right: 15px;
     border-radius: 10px;
