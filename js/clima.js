@@ -83,7 +83,7 @@ window.addEventListener("load", () => {
         console.log(iconoClima);
         let countIndex = 0
         //Bucle extended weather
-        for (let index = 1; index < 5; index++) {
+        for (let index = 1; index < 4; index++) {
             countIndex += 1
             let tempExtendedWeather = document.getElementById('extendedWeather0'+countIndex);
             tempExtendedWeather.innerHTML = Math.round(data.list[countIndex].main.temp)+"°"
