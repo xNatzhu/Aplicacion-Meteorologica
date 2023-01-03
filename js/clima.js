@@ -14,6 +14,8 @@ window.addEventListener("load", () => {
     let getMapLon = document.getElementById("mapLon");
     let cityForm 
     let searchForm = document.getElementById("searchForm");
+    let phrasesWheater = document.getElementById("phrasesWheater")
+    let cityPhrasesWheater = document.getElementById("cityPhrasesWheater")
 
     //Funciones
 
@@ -54,7 +56,29 @@ window.addEventListener("load", () => {
 
     function clima(data) {
         cityForm = data.city.name
+
         console.log(data);
+        
+        //Obj Phrases Wheater
+        let cityPhrasesWheaterValue = data.city.name
+        cityPhrasesWheater.innerText = cityPhrasesWheaterValue
+        
+
+        const objPhrases= {
+            Clear: "The weather is clear, it's a great day for a walk.",
+        }
+
+        let valuePhrases = objPhrases[data.list[0].weather[0].main]
+
+        phrasesWheater.innerText = `${objPhrases.Clear}`
+     
+  
+        console.log("Experimento");
+        console.log(objPhrases.valuePhrases);
+        console.log(valuePhrases);
+
+
+
         let temperaturaGradoValor = Math.round(data.list[0].main.temp);
         temperaturaGrado.innerHTML = `${temperaturaGradoValor}°`
         ciudad.innerText = data.city.name
@@ -62,6 +86,7 @@ window.addEventListener("load", () => {
         let mapLat = data.city.coord.lat
         getMapLat.innerHTML = mapLat;
         getMapLon.innerHTML = mapLon;
+
 
         let selector = document.getElementById('section-two-column-two');
         let iframe = document.createElement('iframe');
@@ -83,7 +108,7 @@ window.addEventListener("load", () => {
         console.log(iconoClima);
         let countIndex = 0
         //Bucle extended weather
-        for (let index = 1; index < 4; index++) {
+        for (let index = 1; index < 6; index++) {
             countIndex += 1
             let tempExtendedWeather = document.getElementById('extendedWeather0'+countIndex);
             tempExtendedWeather.innerHTML = Math.round(data.list[countIndex].main.temp)+"°"
@@ -171,7 +196,7 @@ window.addEventListener("load", () => {
 
                 console.log(URLAPICITY);
     }
-    
+
     //Event
     
     searchForm.addEventListener("submit", searchFunction)
