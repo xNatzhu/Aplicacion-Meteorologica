@@ -66,11 +66,13 @@ window.addEventListener("load", () => {
 
         const objPhrases= {
             Clear: "The weather is clear, it's a great day for a walk.",
+            Rain:"Remember to bring an umbrella, the weather is rainy.",
+            Clouds:"The weather today is cloudy, it is a great day to do physical activity.",
         }
 
         let valuePhrases = objPhrases[data.list[0].weather[0].main]
 
-        phrasesWheater.innerText = `${objPhrases.Clear}`
+        phrasesWheater.innerText = `${valuePhrases}`
      
   
         console.log("Experimento");
@@ -108,7 +110,7 @@ window.addEventListener("load", () => {
         console.log(iconoClima);
         let countIndex = 0
         //Bucle extended weather
-        for (let index = 1; index < 6; index++) {
+        for (let index = 1; index < 4; index++) {
             countIndex += 1
             let tempExtendedWeather = document.getElementById('extendedWeather0'+countIndex);
             tempExtendedWeather.innerHTML = Math.round(data.list[countIndex].main.temp)+"°"
