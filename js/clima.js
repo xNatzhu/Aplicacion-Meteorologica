@@ -10,12 +10,21 @@ window.addEventListener("load", () => {
     let vientoSpeed = document.getElementById("vientoSpeed");
     let temperaturaMax = document.getElementById("temperaturaMax");
     let temperaturaMin = document.getElementById("temperaturaMin");
+    let visibility = document.getElementById("visibility");
     let getMapLat = document.getElementById("mapLat");
     let getMapLon = document.getElementById("mapLon");
     let cityForm 
     let searchForm = document.getElementById("searchForm");
     let phrasesWheater = document.getElementById("phrasesWheater")
     let cityPhrasesWheater = document.getElementById("cityPhrasesWheater")
+
+    //mobile
+    let humedadMobile = document.getElementById("humedadMobile");
+    let vientoSpeedMobile = document.getElementById("vientoSpeedMobile");
+    let temperaturaMaxMobile = document.getElementById("temperaturaMaxMobile");
+    let temperaturaMinMobile = document.getElementById("temperaturaMinMobile");
+    let presionAtmosfericaMobile = document.getElementById(`presionAtmosfericaMobile`);
+    let visibilityMobile = document.getElementById("visibilityMobile");
 
     //Funciones
 
@@ -63,11 +72,13 @@ window.addEventListener("load", () => {
         let cityPhrasesWheaterValue = data.city.name
         cityPhrasesWheater.innerText = cityPhrasesWheaterValue
         
+        //agregar frase random
 
         const objPhrases= {
             Clear: "The weather is clear, it's a great day for a walk.",
             Rain:"Remember to bring an umbrella, the weather is rainy.",
             Clouds:"The weather today is cloudy, it is a great day to do physical activity.",
+            Snow:"A snowfall is in town, it's time to assemble the snowman.",
         }
 
         let valuePhrases = objPhrases[data.list[0].weather[0].main]
@@ -95,14 +106,25 @@ window.addEventListener("load", () => {
         //propiedades iframe
         iframe.setAttribute('src',`https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13618.049739807708!2d${mapLon}!3d${mapLat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sar!4v1662869534399!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade`);
         selector.appendChild(iframe);
+
         let {humidity, pressure} = data.list[0].main
         humedad.innerHTML = `${humidity}%`
+        humedadMobile.innerHTML = `${humidity}%`
+
         presionAtmosferica.innerHTML = `${pressure} hPa`
+        presionAtmosfericaMobile.innerHTML = `${pressure} hPa`
+
         vientoSpeed.innerHTML = `${data.list[0].wind.speed} km/h`
+        vientoSpeedMobile.innerHTML = `${data.list[0].wind.speed} km/h`
+
+        visibility.innerHTML = `${data.list[0].visibility}`
+        visibilityMobile.innerHTML = `${data.list[0].visibility}`
 
         const {maxTemp, minTemp} = getTemperature(data.list[0].main);
         temperaturaMax.innerHTML = `${maxTemp}°`
         temperaturaMin.innerHTML = `${minTemp}°`
+        temperaturaMaxMobile.innerHTML = `${maxTemp}°`
+        temperaturaMinMobile.innerHTML = `${minTemp}°`
 
         const icon = data.list[0].weather[0].icon
         iconoClima.src = `assets/animated/${icon}.svg`;
