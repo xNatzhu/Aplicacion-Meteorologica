@@ -48,7 +48,7 @@ window.addEventListener("load", () => {
             forecastDay.innerHTML = daysFilter
 
         }
-            
+           
         }, 1000);
     }
 
@@ -141,6 +141,22 @@ window.addEventListener("load", () => {
             let forecastDescriptionExtended= document.getElementById('forecastDescriptionExtended0'+countIndex);
             forecastDescriptionExtended.innerText = data.list[countIndex].weather[0].main
             
+        }
+        getSysMovementOfSunAndMoon(data)
+    }
+
+
+    function getSysMovementOfSunAndMoon(data){
+        let movementOfSunAndMoon = data.list[0].sys.pod
+
+        if(movementOfSunAndMoon == "d"){
+            let backgroundDay = document.getElementById("section-two-column-one")
+            backgroundDay.style.backgroundImage= 'url("assets/background/day.jpg")';
+
+        }
+        else{
+            let backgroundNight = document.getElementById("section-two-column-one")
+            backgroundNight.style.backgroundImage= 'url("assets/background/night.jpg")';
         }
     }
 

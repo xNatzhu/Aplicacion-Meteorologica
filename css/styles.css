@@ -24,6 +24,7 @@
     --color-fifth:#e4dede; /* dark: e4dede -  light: 858585 */
     --color-sixth-temp:#ffffff; /* dark: ffffff - light 696971*/
     --color-logo-name: #ffffff;
+    --color-input-text:#ffffff;
   }
 
 
@@ -156,6 +157,10 @@ header{
     color: var(--color-four);
     font-weight: bold;
 }
+
+input[type=text], input[type=email], input[type=tel], input[type=url], input[type=date], input[type=password]{
+    color: var( --color-input-text);
+  }
 
 /*--------------------------------------------------------------------------------------------------------------*/
 
@@ -707,7 +712,7 @@ header{
         border-top-right-radius: 10px;
         border-bottom-left-radius: 0px;
         border-bottom-right-radius: 0px;
-        background-image: url(../assets/background/descarga.jpg);
+        background-image: url(../assets/background/descarga2.jpg);
         background-position: cover;
         background-repeat: no-repeat;
     }
