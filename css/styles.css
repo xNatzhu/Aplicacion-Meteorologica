@@ -205,6 +205,7 @@ input[type=text], input[type=email], input[type=tel], input[type=url], input[typ
 #County-in{
     font-size: 14px;
     color:  var(--color-tertiary);
+    margin-left: 15px;
 }
 
 #current-weather{
@@ -366,6 +367,7 @@ input[type=text], input[type=email], input[type=tel], input[type=url], input[typ
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     border-radius: 10px;
     margin-bottom: 30px;
+    align-items: center;
 
 }
 
@@ -418,7 +420,7 @@ input[type=text], input[type=email], input[type=tel], input[type=url], input[typ
     align-items: center;
     width: 300px;
     background-color: var( --main-color);
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 15px;
@@ -432,8 +434,6 @@ input[type=text], input[type=email], input[type=tel], input[type=url], input[typ
     font-size: 20px;
     padding-left: 10px;
 }
-
-
 
 
 #section-four-main-weather{
@@ -628,6 +628,18 @@ input[type=text], input[type=email], input[type=tel], input[type=url], input[typ
         margin-left: 15px;
     }
 
+    .section-three-row-locations{
+        margin-top: 20px;
+        width: 300px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+        align-items: center;
+
+    
+    }
+
 
 
 
@@ -742,4 +754,17 @@ input[type=text], input[type=email], input[type=tel], input[type=url], input[typ
     #section-two-column-two{
         display:none;
     }
+}
+
+
+@media (max-width: 399px){
+    #main-temperature{
+        width: 300px;
+
+    }
+    .current-temperature-icon img{
+        width: 180px;
+    }
+    
+
 }
