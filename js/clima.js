@@ -27,6 +27,14 @@ window.addEventListener("load", () => {
     let presionAtmosfericaMobile = document.getElementById(`presionAtmosfericaMobile`);
     let visibilityMobile = document.getElementById("visibilityMobile");
 
+    //random city
+
+    let randomCityTemp = document.getElementById("randomCityTemp");
+    let randomCityName = document.getElementById("randomCityName");
+    let randomCityState = document.getElementById("randomCityState");
+    let randomCityHumedity = document.getElementById("randomCityHumedity");
+    let randomCityPrecise = document.getElementById("randomCityPrecise");
+    let randomCitywind = document.getElementById("randomCitywind")
     //Funciones
 
     //Funcion - fecha
@@ -238,11 +246,45 @@ window.addEventListener("load", () => {
                 console.log(URLAPICITY);
     }
 
+
+    function getDataRandomCity(data){
+
+        randomCityTemp.innerHTML = `${data.list[0].main.temp}°`
+        randomCityName.innerHTML = `${data.city.name}`
+        randomCityState.innerHTML = `${data.city.country}`
+        randomCityHumedity.innerHTML = `${data.list[0].main.humidity}% Humedity`
+        randomCityPrecise.innerHTML = `${data.list[0].main.pressure}hPa pressure`
+        randomCitywind.innerHTML = `${data.list[0].wind.speed}km/h wind`
+        
+    }
+
+
+
+    function getRandomCity(city) {
+        const listCity = ["Buenos Aires", "Japon", "Paris", "Roma", "Nueva York", "Barcelona", "California", "Amsterdam", "Manchester","Madrid", "Pekín", "Moscú", "Estambul"]
+        const randomCity = Math.floor(Math.random()*listCity.length)
+        const randomUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${listCity[randomCity]}&APPID=6752644c4b10d307e40b484055d4f5a5&units=metric`
+        console.log(randomCity)
+        console.log("Experimento 3");
+        fetch(randomUrl)
+            .then(response => {return response.json()})
+            .then(data => {
+                getDataRandomCity(data)
+            })
+            .catch(error => {
+                console.log(error)
+            })
+
+        console.log(randomUrl);
+    }
+
+    getRandomCity()
+
+
+
     //Event
     
     searchForm.addEventListener("submit", searchFunction)
-
-    //menu
 
     function navResponsive() {
         const menuItemsClass = document.querySelectorAll(".menu-item-block");
