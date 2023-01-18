@@ -102,7 +102,8 @@ header{
     font-size: 15px;
     font-weight: bold;
 }
-.menu-item-block:hover{
+
+.active{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -113,7 +114,6 @@ header{
     background-color: var(--color-bg-menu-desk-active);
     color:  var(--color-secondary);
 }
-
 
 /*Main - config*/
 
