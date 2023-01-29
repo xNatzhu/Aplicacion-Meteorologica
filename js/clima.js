@@ -255,6 +255,8 @@ window.addEventListener("load", () => {
         randomCityHumedity.innerHTML = `${data.list[0].main.humidity}% Humedity`
         randomCityPrecise.innerHTML = `${data.list[0].main.pressure}hPa pressure`
         randomCitywind.innerHTML = `${data.list[0].wind.speed}km/h wind`
+        const randomIconCityValue = data.list[0].weather[0].icon
+        RandomIconCity.src = `assets/animated/${randomIconCityValue}.svg`;
         
     }
 
@@ -286,11 +288,21 @@ window.addEventListener("load", () => {
     
     searchForm.addEventListener("submit", searchFunction)
 
+    //Event - Menu
+
+
     function navResponsive() {
         const menuItemsClass = document.querySelectorAll(".menu-item-block");
+        const menuIconMobile = document.querySelector("#menu-icon-mobile");
+
+        menuIconMobile.addEventListener("click", function () {
+            document.body.classList.toggle("mobile-menu-active");
+          });
+
+
         menuItemsClass.forEach(function (menuItem) {
           menuItem.addEventListener("click", function () {
-
+            document.body.classList.remove("mobile-menu-active");
             let currentItem = document.querySelector(".active");
             currentItem.classList.remove("active");
             this.classList.add("active");
@@ -298,8 +310,6 @@ window.addEventListener("load", () => {
         });
       }
       navResponsive();
-
-    
-
       
-      });    
+    
+});    
