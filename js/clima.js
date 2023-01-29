@@ -263,7 +263,7 @@ window.addEventListener("load", () => {
 
 
     function getRandomCity(city) {
-        const listCity = ["Buenos Aires", "Japon", "Paris", "Roma", "Nueva York", "Barcelona", "California", "Amsterdam", "Manchester","Madrid", "Pekín", "Moscú", "Estambul"]
+        const listCity = ["Buenos Aires", "Japon", "Paris", "Roma", "Nueva York", "Barcelona", "California", "Amsterdam", "Manchester","Madrid", "Pekin", "Moscu", "Estambul"]
         const randomCity = Math.floor(Math.random()*listCity.length)
         const randomUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${listCity[randomCity]}&APPID=6752644c4b10d307e40b484055d4f5a5&units=metric`
         console.log(randomCity)
