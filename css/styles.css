@@ -961,6 +961,18 @@ input[type=text], input[type=email], input[type=tel], input[type=url], input[typ
     .current-temperature-icon img{
         width: 180px;
     }
+    /*Menu - search */
+    #section-one{
+        z-index: 20;
+        position:fixed;
+        top:0px;
+        width: 200px;
+        padding-left: 30px;
+    }
+    #section-one input[type=text], input[type=email], input[type=tel], input[type=url], input[type=date], input[type=password]{
+        color: var( --color-input-text);
+        width: 150px;
+      }
     
 
 }
