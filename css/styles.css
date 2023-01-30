@@ -612,15 +612,7 @@ input[type=text], input[type=email], input[type=tel], input[type=url], input[typ
     }
 
     #menu-logo{
-        background-color: none;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        padding-top:10px;
-        padding-bottom: 10px;
-        padding-right: 30px;
-        color:  var( --color-logo-name);
-        font-weight: bold;
+        display:none;
     }
 
     body.mobile-menu-active #menu-mobile-icon-close {
@@ -633,7 +625,6 @@ input[type=text], input[type=email], input[type=tel], input[type=url], input[typ
         margin-right: 10px;
         margin-left: 10px;
     }
-
     #menu-item{
         display: none;
         flex-direction: column;
@@ -690,6 +681,7 @@ input[type=text], input[type=email], input[type=tel], input[type=url], input[typ
         align-items: center;
         justify-content: right;
         width: 100%;
+        height: 80px;
     }
 
     .menu-item-main-search{
@@ -760,6 +752,18 @@ input[type=text], input[type=email], input[type=tel], input[type=url], input[typ
         display: none;
     }
 
+    body.mobile-menu-active .active{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-left: 20px;
+        border-left:  var(--color-secondary) 2px solid;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: var(--color-bg-menu-desk-active);
+        color: var(--color-secondary);
+    }
+    
 
     /*Menu - search */
     #section-one{
@@ -772,6 +776,7 @@ input[type=text], input[type=email], input[type=tel], input[type=url], input[typ
     body.mobile-menu-active #section-one{
         display: none;
     }
+
     #section-two{
         display: flex;
         flex-direction: column;
