@@ -260,7 +260,7 @@ input[type=text], input[type=email], input[type=tel], input[type=url], input[typ
     flex-direction: column;
 }
 
-#componentes-weather{
+#component-weather{
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -269,17 +269,17 @@ input[type=text], input[type=email], input[type=tel], input[type=url], input[typ
     
 }
 
-#componentes-weather-mobile{
+#component-weather-mobile{
     display: none;
 }
 
-#componentes-weather-column-one{
+#component-weather-column-one{
     display: flex;
     flex-direction: column;
     padding-top: 20px;
 }
 
-#componentes-weather-block{
+#component-weather-block{
     display: flex;
     flex-direction: row;
     padding: 10px;
@@ -289,17 +289,17 @@ input[type=text], input[type=email], input[type=tel], input[type=url], input[typ
 }
 
 
-.componentes-weather-block-icon{
+.component-weather-block-icon{
     margin-right: 10px;
 }
 
-.componentes-weather-block-number{
+.component-weather-block-number{
     font-size: 20px;
     font-weight: bold;
     color: var(--color-fifth);
 }
 
-.componentes-weather-block-element{
+.component-weather-block-element{
     color: var(--color-seven);
     font-size: 15px;
     font-weight: 700;
@@ -909,7 +909,7 @@ input[type=text], input[type=email], input[type=tel], input[type=url], input[typ
 
     }
 
-    #componentes-weather-mobile{
+    #component-weather-mobile{
         display: flex;
         flex-direction: column;
         background-color: var( --main-color);
@@ -930,7 +930,7 @@ input[type=text], input[type=email], input[type=tel], input[type=url], input[typ
         background-position: cover;
         background-repeat: no-repeat;
     }
-    #componentes-weather-column-one{
+    #component-weather-column-one{
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -941,11 +941,11 @@ input[type=text], input[type=email], input[type=tel], input[type=url], input[typ
     }
     
 
-    #componentes-weather{
+    #component-weather{
         display: none;
     }
 
-    #componentes-weather-block{
+    #component-weather-block{
         display: flex;
         flex-direction: row;
         padding: 10px;

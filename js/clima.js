@@ -2,15 +2,15 @@
 
 window.addEventListener("load", () => {
     //Variables
-    let temperaturaGrado = document.getElementById("section_one_column_grado");
-    let ciudad = document.getElementById("ciudad");
+    let temperatureDegree = document.getElementById("section_one_column_grado");
+    let city = document.getElementById("city");
     let map = document.getElementById("map");
-    let fecha = document.getElementById("fecha");
-    let humedad = document.getElementById("humedad");
-    let presionAtmosferica = document.getElementById(`presionAtmosferica`);
-    let vientoSpeed = document.getElementById("vientoSpeed");
-    let temperaturaMax = document.getElementById("temperaturaMax");
-    let temperaturaMin = document.getElementById("temperaturaMin");
+    let daysDate = document.getElementById("daysDate");
+    let humidityData = document.getElementById("humidityData");
+    let atmosphericPressure = document.getElementById(`atmosphericPressure`);
+    let windSpeed = document.getElementById("windSpeed");
+    let temperatureMax = document.getElementById("temperatureMax");
+    let temperatureMin = document.getElementById("temperatureMin");
     let visibility = document.getElementById("visibility");
     let getMapLat = document.getElementById("mapLat");
     let getMapLon = document.getElementById("mapLon");
@@ -20,11 +20,11 @@ window.addEventListener("load", () => {
     let cityPhrasesWheater = document.getElementById("cityPhrasesWheater")
 
     //mobile
-    let humedadMobile = document.getElementById("humedadMobile");
-    let vientoSpeedMobile = document.getElementById("vientoSpeedMobile");
-    let temperaturaMaxMobile = document.getElementById("temperaturaMaxMobile");
-    let temperaturaMinMobile = document.getElementById("temperaturaMinMobile");
-    let presionAtmosfericaMobile = document.getElementById(`presionAtmosfericaMobile`);
+    let humidityDataMobile = document.getElementById("humidityDataMobile");
+    let windSpeedMobile = document.getElementById("windSpeedMobile");
+    let temperatureMaxMobile = document.getElementById("temperatureMaxMobile");
+    let temperatureMinMobile = document.getElementById("temperatureMinMobile");
+    let atmosphericPressureMobile = document.getElementById(`atmosphericPressureMobile`);
     let visibilityMobile = document.getElementById("visibilityMobile");
 
     //random city
@@ -35,33 +35,32 @@ window.addEventListener("load", () => {
     let randomCityHumedity = document.getElementById("randomCityHumedity");
     let randomCityPrecise = document.getElementById("randomCityPrecise");
     let randomCitywind = document.getElementById("randomCitywind")
-    //Funciones
+    
+    //fuction
 
-    //Funcion - fecha
-    function fechaContent() {
+    //function - daysDate
+    function daysDateContent() {
         setInterval(() => {
-        //Variables dias
+        //Days variable
         let weekDays  = ["Sunday","Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-        //Variable fecha
+        //daysDate counter variable
         let dateClassCreation = new Date();
         let executionOfDays = dateClassCreation.getDay()
-        fecha.innerHTML = weekDays[executionOfDays];
-
-        //Variable de contador
+        daysDate.innerHTML = weekDays[executionOfDays];
+        //counter variable
         let countDays = 0
-
         for (let index = 0; index < 3; index++) {
             countDays +=1
             let forecastDay = document.getElementById('forecastDay0'+countDays);
             var daysFilter= ((executionOfDays+=1) > 6) ? weekDays[executionOfDays = 0] : weekDays[executionOfDays];
             forecastDay.innerHTML = daysFilter
-
         }
            
         }, 1000);
     }
+    daysDateContent()
 
-    fechaContent()
+
 
     const getTemperature = (main) => {
         const maxTemp = Math.round(main.temp_max)
@@ -70,7 +69,7 @@ window.addEventListener("load", () => {
         return {maxTemp, minTemp};
     }
 
-    //Funcion - proceso del clima
+    //Function - weather process
 
     function clima(data) {
         cityForm = data.city.name
@@ -81,7 +80,7 @@ window.addEventListener("load", () => {
         let cityPhrasesWheaterValue = data.city.name
         cityPhrasesWheater.innerText = cityPhrasesWheaterValue
         
-        //agregar frase random
+       //add random phrase
 
         const objPhrases= {
             Clear: "The weather is clear, it's a great day for a walk.",
@@ -101,9 +100,9 @@ window.addEventListener("load", () => {
 
 
 
-        let temperaturaGradoValor = Math.round(data.list[0].main.temp);
-        temperaturaGrado.innerHTML = `${temperaturaGradoValor}°`
-        ciudad.innerText = data.city.name
+        let temperatureDegreeValor = Math.round(data.list[0].main.temp);
+        temperatureDegree.innerHTML = `${temperatureDegreeValor}°`
+        city.innerText = data.city.name
         let mapLon = data.city.coord.lon
         let mapLat = data.city.coord.lat
         getMapLat.innerHTML = mapLat;
@@ -112,28 +111,29 @@ window.addEventListener("load", () => {
 
         let selector = document.getElementById('section-two-column-two');
         let iframe = document.createElement('iframe');
-        //propiedades iframe
+        
+        //iframe properties
         iframe.setAttribute('src',`https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13618.049739807708!2d${mapLon}!3d${mapLat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sar!4v1662869534399!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade`);
         selector.appendChild(iframe);
 
         let {humidity, pressure} = data.list[0].main
-        humedad.innerHTML = `${humidity}%`
-        humedadMobile.innerHTML = `${humidity}%`
+        humidityData.innerHTML = `${humidity}%`
+        humidityDataMobile.innerHTML = `${humidity}%`
 
-        presionAtmosferica.innerHTML = `${pressure} hPa`
-        presionAtmosfericaMobile.innerHTML = `${pressure} hPa`
+        atmosphericPressure.innerHTML = `${pressure} hPa`
+        atmosphericPressureMobile.innerHTML = `${pressure} hPa`
 
-        vientoSpeed.innerHTML = `${data.list[0].wind.speed} km/h`
-        vientoSpeedMobile.innerHTML = `${data.list[0].wind.speed} km/h`
+        windSpeed.innerHTML = `${data.list[0].wind.speed} km/h`
+        windSpeedMobile.innerHTML = `${data.list[0].wind.speed} km/h`
 
         visibility.innerHTML = `${data.list[0].visibility}`
         visibilityMobile.innerHTML = `${data.list[0].visibility}`
 
         const {maxTemp, minTemp} = getTemperature(data.list[0].main);
-        temperaturaMax.innerHTML = `${maxTemp}°`
-        temperaturaMin.innerHTML = `${minTemp}°`
-        temperaturaMaxMobile.innerHTML = `${maxTemp}°`
-        temperaturaMinMobile.innerHTML = `${minTemp}°`
+        temperatureMax.innerHTML = `${maxTemp}°`
+        temperatureMin.innerHTML = `${minTemp}°`
+        temperatureMaxMobile.innerHTML = `${maxTemp}°`
+        temperatureMinMobile.innerHTML = `${minTemp}°`
 
         const icon = data.list[0].weather[0].icon
         iconoClima.src = `assets/animated/${icon}.svg`;
@@ -212,7 +212,7 @@ window.addEventListener("load", () => {
     function searchFunction(params) {
         //handler 
     
-        //CONFIGURACION FORM
+        //FORM CONFIGURATION
         params.preventDefault()
         let element  = document.getElementById("section-two-column-two");
             while (element.firstChild) {
@@ -235,7 +235,7 @@ window.addEventListener("load", () => {
                   Swal.fire({
                     icon: 'error',
                     title: 'Oops...',
-                    text: 'La ciudad colocada no existe... ¡Porfavor inténtelo nuevamente!',
+                    text: 'La city colocada no existe... ¡Porfavor inténtelo nuevamente!',
                     background: "#000000ea",
                     color:"#fff",
                     confirmButtonColor: "#161616",
