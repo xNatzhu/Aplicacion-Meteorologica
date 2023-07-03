@@ -1,4 +1,4 @@
-# Aplicación del Clima
+# Aplicación Meteorológica
 
 ## Descripción 💫
 
