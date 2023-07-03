@@ -29,7 +29,7 @@ open index.html
 - HTML
 - CSS
 - JavaScript
-- OpenWeather API (https://openweathermap.org/api)
+- [OpenWeather API](https://openweathermap.org/api)  
 
 
 ## Autor  ✒️
