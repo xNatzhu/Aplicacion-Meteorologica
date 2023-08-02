@@ -8,12 +8,12 @@ Esta es una aplicación de clima desarrollada con HTML, CSS y JavaScript. Permit
 
 1. Clonar el repositorio de la Aplicación de Clima:
 ```
-git clone https://github.com/xNatzhu/Aplicacion-del-Clima
+git clone https://github.com/xNatzhu/Aplicacion-Meteorologica
 ```
 
 2. Acceder al directorio del proyecto:
 ```
-cd Aplicacion-Clima
+cd Aplicacion-Meteorologica
 ```
 
 ## Uso  📌
@@ -24,7 +24,7 @@ open index.html
 ```
 2. Utilizar la aplicación para obtener información sobre el clima de diferentes ciudades.
 
-## Tecnologías utilizadas  🛠️
+## Tecnologías utilizadas  🔨
 
 - HTML
 - CSS
